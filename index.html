@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nammo Fashion Designer – Nammo Nail Arts | Premium Nail Salon</title>
+  <meta name="description" content="Experience luxury nail art at Nammo Nail Arts. Gel nails, acrylic, bridal designs, French manicure & custom art. Book your appointment today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== FLOATING CART BUTTON ===== -->
+  <button class="cart-float-btn" id="cartFloatBtn" onclick="toggleCart()" aria-label="Shopping Cart">
+    <i class="fas fa-shopping-bag"></i>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+      <button onclick="toggleCart()" class="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your cart is empty</p>
+        <span>Add some beautiful nail services!</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button class="btn-checkout" onclick="checkout()">Proceed to Book <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-spa"></i></div>
+        <div class="logo-text">
+          <span class="logo-main">Nammo</span>
+          <span class="logo-sub">Nail Arts</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#booking" class="nav-link">Book Now</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-cart-btn" onclick="toggleCart()" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1920&q=90" alt="Luxury Nail Art" class="hero-img" />
+    </div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Premium Nail Studio ✦</div>
+      <h1 class="hero-title">
+        <span class="hero-title-main">Nammo Fashion</span>
+        <span class="hero-title-script">Designer</span>
+      </h1>
+      <p class="hero-subtitle">— Nammo Nail Arts —</p>
+      <p class="hero-tagline">Where Beauty Meets Artistry. Every Nail Tells a Story.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Explore Services <i class="fas fa-arrow-right"></i></a>
+        <a href="#booking" class="btn-secondary">Book Appointment <i class="fas fa-calendar-alt"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>500+</strong><span>Happy Clients</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>50+</strong><span>Nail Designs</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>5★</strong><span>Rated Salon</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE STRIP ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>✦ Gel Nail Art</span>
+      <span>✦ Acrylic Nails</span>
+      <span>✦ Bridal Designs</span>
+      <span>✦ French Manicure</span>
+      <span>✦ Custom Nail Art</span>
+      <span>✦ Nail Extensions</span>
+      <span>✦ Nail Accessories</span>
+      <span>✦ Gel Nail Art</span>
+      <span>✦ Acrylic Nails</span>
+      <span>✦ Bridal Designs</span>
+      <span>✦ French Manicure</span>
+      <span>✦ Custom Nail Art</span>
+      <span>✦ Nail Extensions</span>
+      <span>✦ Nail Accessories</span>
+    </div>
+  </div>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">Luxury Nail <em>Services</em></h2>
+        <p class="section-subtitle">Crafted with precision, passion, and premium products for the most beautiful nails you've ever had.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid">
+        <!-- Services injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Work</span>
+        <h2 class="section-title">Nail Art <em>Gallery</em></h2>
+        <p class="section-subtitle">A glimpse of our stunning nail art creations – each one a masterpiece.</p>
+      </div>
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="gel">Gel</button>
+        <button class="filter-btn" data-filter="acrylic">Acrylic</button>
+        <button class="filter-btn" data-filter="bridal">Bridal</button>
+        <button class="filter-btn" data-filter="custom">Custom</button>
+      </div>
+      <div class="gallery-masonry" id="galleryGrid">
+        <!-- Gallery items injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-img-col">
+          <div class="why-img-stack">
+            <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=500&q=80" alt="Nail Studio" class="why-img-1" />
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&q=80" alt="Nail Art Detail" class="why-img-2" />
+            <div class="why-badge-floating">
+              <i class="fas fa-award"></i>
+              <div><strong>Premium</strong><span>Quality</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="why-content">
+          <span class="section-tag">Why Choose Us</span>
+          <h2 class="section-title">The Nammo <em>Difference</em></h2>
+          <p class="why-desc">We believe every client deserves to feel like royalty. Our skilled artists combine artistry with premium products to create nails that are truly one-of-a-kind.</p>
+          <div class="why-features">
+            <div class="why-feature"><div class="why-icon"><i class="fas fa-star"></i></div><div><h4>Premium Products Only</h4><p>We use only top-grade, skin-safe nail products.</p></div></div>
+            <div class="why-feature"><div class="why-icon"><i class="fas fa-palette"></i></div><div><h4>Expert Nail Artists</h4><p>Trained professionals with 5+ years of experience.</p></div></div>
+            <div class="why-feature"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><div><h4>Hygienic & Safe</h4><p>Sterilized tools & strict hygiene protocols always.</p></div></div>
+            <div class="why-feature"><div class="why-icon"><i class="fas fa-heart"></i></div><div><h4>Personalized Service</h4><p>Every nail design tailored just for you.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS SECTION ===== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our Clients <em>Say</em></h2>
+        <p class="section-subtitle">Don't just take our word for it – hear from our happy clients.</p>
+      </div>
+      <div class="reviews-slider" id="reviewsSlider">
+        <!-- Reviews injected by JS -->
+      </div>
+      <div class="reviews-dots" id="reviewsDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING SECTION ===== -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="booking-wrapper">
+        <div class="booking-info">
+          <span class="section-tag light-tag">Book Your Appointment</span>
+          <h2 class="section-title light-title">Reserve Your <em>Slot</em></h2>
+          <p class="booking-desc">Experience the ultimate luxury nail treatment. Our expert artists are ready to create your dream nails. Book your appointment now!</p>
+          <div class="booking-contact-items">
+            <div class="b-contact-item"><i class="fas fa-phone"></i><div><strong>Call Us</strong><span>+91 98765 43210</span></div></div>
+            <div class="b-contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><span>MG Road, Bengaluru, Karnataka 560001</span></div></div>
+            <div class="b-contact-item"><i class="fas fa-clock"></i><div><strong>Working Hours</strong><span>Mon–Sat: 10 AM – 8 PM</span></div></div>
+          </div>
+        </div>
+        <div class="booking-form-card">
+          <h3>Book an Appointment</h3>
+          <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookName">Full Name</label>
+                <input type="text" id="bookName" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <label for="bookPhone">Phone Number</label>
+                <input type="tel" id="bookPhone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bookEmail">Email Address</label>
+              <input type="email" id="bookEmail" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="bookService">Select Service</label>
+              <select id="bookService" required>
+                <option value="">Choose a service...</option>
+                <option>Gel Nail Art – ₹1,200</option>
+                <option>Acrylic Nails – ₹1,800</option>
+                <option>Bridal Nail Design – ₹3,500</option>
+                <option>French Manicure – ₹800</option>
+                <option>Custom Nail Art – ₹2,200</option>
+                <option>Nail Extensions – ₹1,500</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookDate">Preferred Date</label>
+                <input type="date" id="bookDate" required />
+              </div>
+              <div class="form-group">
+                <label for="bookTime">Preferred Time</label>
+                <select id="bookTime" required>
+                  <option value="">Select time...</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>01:00 PM</option>
+                  <option>02:00 PM</option>
+                  <option>03:00 PM</option>
+                  <option>04:00 PM</option>
+                  <option>05:00 PM</option>
+                  <option>06:00 PM</option>
+                  <option>07:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bookNotes">Special Notes (Optional)</label>
+              <textarea id="bookNotes" rows="3" placeholder="Any special requests or design ideas..."></textarea>
+            </div>
+            <button type="submit" class="btn-book-submit">
+              <i class="fas fa-calendar-check"></i> Confirm Appointment
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING SUCCESS MODAL ===== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+      <h3>Appointment Booked!</h3>
+      <p>Thank you! Your appointment has been confirmed. We'll send you a reminder shortly.</p>
+      <div class="modal-details" id="modalDetails"></div>
+      <button class="btn-primary" onclick="closeModal()">Done <i class="fas fa-heart"></i></button>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact <em>Us</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h4>Visit Us</h4>
+          <p>MG Road, Bengaluru<br/>Karnataka 560001, India</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+          <h4>Call Us</h4>
+          <p>+91 98765 43210<br/>+91 91234 56789</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+          <h4>Email Us</h4>
+          <p>nammo@nailarts.in<br/>info@nammofashion.in</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
+          <h4>Working Hours</h4>
+          <p>Mon–Sat: 10 AM – 8 PM<br/>Sunday: 11 AM – 6 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="logo-icon"><i class="fas fa-spa"></i></div>
+              <div class="logo-text">
+                <span class="logo-main">Nammo</span>
+                <span class="logo-sub">Nail Arts</span>
+              </div>
+            </div>
+            <p class="footer-brand-desc">Premium nail art studio where artistry meets elegance. We transform your nails into beautiful works of art.</p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#booking">Book Now</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Our Services</h5>
+            <ul>
+              <li><a href="#services">Gel Nail Art</a></li>
+              <li><a href="#services">Acrylic Nails</a></li>
+              <li><a href="#services">Bridal Design</a></li>
+              <li><a href="#services">French Manicure</a></li>
+              <li><a href="#services">Custom Nail Art</a></li>
+              <li><a href="#services">Nail Extensions</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact Info</h5>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>MG Road, Bengaluru, Karnataka 560001</span></div>
+              <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+91 98765 43210</span></div>
+              <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>nammo@nailarts.in</span></div>
+              <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 10 AM – 8 PM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Nammo Fashion Designer – Nammo Nail Arts. All rights reserved. Made with <i class="fas fa-heart"></i> for beautiful nails.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Scroll to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
